@@ -29,12 +29,15 @@ void eGCD(int a, int b, int *s, int *t)
 void solveCongrunce(int n, int m[], int M[], int a[])
 {
     int Mtotal = 1, ans = 0;
+    //calculating M total
     for(int i = 0; i < n; i++) Mtotal *= m[i];
     for(int i = 0; i < n; i++) M[i] = Mtotal / m[i];
     for(int i = 0; i < n; i++)
     {
-        int s, t;
+        int s, t; 
+        //using extended GCD to calculate the inverses
         eGCD(M[i], m[i], &s, &t);
+        //adding on the final answer after each calculation of inverse
         ans += a[i] * M[i] * s;
     }
     cout << endl;
@@ -46,6 +49,7 @@ int main()
     int n;
     cout << "Enter the number of equations: ";
     cin >> n;
+    //initializing arrays used in equations
     int m[n], M[n], a[n];
     cout << "Enter the the a's with space separated: ";
     for(int i = 0; i < n; i++) cin >> a[i];
