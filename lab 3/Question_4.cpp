@@ -26,6 +26,14 @@ void eGCD(int a, int b, int *s, int *t)
     *t = si - a / b * ti;
 }
 
+/*
+    parameter:
+    n: int
+    m[]: int
+    M[]: int
+    a[]: int
+    void functions that takes the valuse of m, M, a for the n equations and prints the solution mod Mtotal
+*/
 void solveCongrunce(int n, int m[], int M[], int a[])
 {
     int Mtotal = 1, ans = 0;
