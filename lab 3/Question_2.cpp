@@ -10,6 +10,7 @@ using namespace std;
 void sieve(int n, bool primes[])
 {
     for(int i = 1; i <= n; i++) primes[i] = true;
+    //loop on i form 2 to sqrt(n) to convet multiples of i from index i*i to n to false 
     for(int i = 2; i <= sqrt(n); i++) {
         if(primes[i]) {
             for(int j = i * i; j <= n; j += i) {
