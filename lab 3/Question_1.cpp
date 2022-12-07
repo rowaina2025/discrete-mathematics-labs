@@ -12,6 +12,7 @@ void sieve(int n, bool primes[])
     for(int i = 2; i <= n; i++) primes[i] = true;
     for(int i = 2; i <= sqrt(n); i++)
     {
+        //if prime then set entries of multiples of i stating form i*i to false
         if(primes[i])
         {
             for(int j = i * i; j <= n; j += i)
