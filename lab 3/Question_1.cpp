@@ -28,7 +28,6 @@ int main()
     cout << "Enter number: ";
     cin >> n;
     bool primes[n + 1];
-    vector<int> factors;
-    trialDivisionFactorization(n, primes, factors);
-    for(int i = 0; i < factors.size(); i++) cout << factors[i] << ' ';
+    sieve(n, primes);
+    for(int i = 0; i < n; i++) if(primes[i]) cout << i << ' ';
 }
