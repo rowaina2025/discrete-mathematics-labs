@@ -33,7 +33,7 @@ void eGCD(int a, int b, int *s, int *t)
     m[]: int
     M[]: int
     a[]: int
-    void functions that takes the valuse of m, M, a for the n equations and prints the solution mod Mtotal
+    void functions that takes the values of m, M, a for the n equations and prints the solution mod Mtotal
 */
 void solveCongrunce(int n, int m[], int M[], int a[])
 {
