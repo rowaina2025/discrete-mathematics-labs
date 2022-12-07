@@ -60,15 +60,15 @@ bool millerTest(int n, int k)
     else if(n == 2 || n == 3) return true;
     int m = n - 1;
     while(m % 2 == 0) m /= 2;
-    for(int i = 0; i < k; i++)
-        if(singleTest(m, n)) return false;
+    for(int i = 0; i < k; i++) if(single_test(m, n)) return false;
     return true;
 }
 
-int main ()
+int main()
 {
+    cout << "Enter n & k with space separated: ";
     int n, k;
     cin >> n >> k;
-    if(!millerTest(n, k)) cout << "Probably prime";
-    else cout << "Not prime";
+    if(!millerTest(n, k)) cout << "Probably prime" << endl;
+    else cout << "Not prime" << endl;
 }
