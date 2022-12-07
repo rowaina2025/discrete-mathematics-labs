@@ -14,7 +14,8 @@ void eGCD(int a, int b, int *s, int *t)
     //the s and t used in each step in the backward substitution
     int si, ti;
     //the base case
-    if(a % b == 0) {
+    if(a % b == 0)
+    {
         *s = 0;
         *t = 1;
         return;
@@ -42,7 +43,7 @@ void solveCongrunce(int n, int m[], int M[], int a[])
     for(int i = 0; i < n; i++) M[i] = Mtotal / m[i];
     for(int i = 0; i < n; i++)
     {
-        int s, t; 
+        int s, t;
         //using extended GCD to calculate the inverses
         eGCD(M[i], m[i], &s, &t);
         //adding on the final answer after each calculation of inverse
