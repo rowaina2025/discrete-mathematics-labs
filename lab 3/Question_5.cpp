@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int fast_modular_exponentiaion(int base, int exp, int mod)
+int fastModularExponentiaion(int base, int exp, int mod)
 {
     int bit = ceil(log2(exp)), res = 1, power = base % mod;
     for(int i = 0; i <= bit; i++)
@@ -14,10 +14,10 @@ int fast_modular_exponentiaion(int base, int exp, int mod)
     return res;
 }
 
-bool single_test(int m, int n)
+bool singleTest(int m, int n)
 {
     int a = 2 + rand() % (n - 4);
-    int res = fast_modular_exponentiaion(a, m, n);
+    int res = fastModularExponentiaion(a, m, n);
     if(res == 1 || res == n - 1) return true;
     while(m != n - 1)
     {
@@ -36,7 +36,7 @@ bool millerTest(int n, int k)
     int m = n - 1;
     while(m % 2 == 0) m /= 2;
     for(int i = 0; i < k; i++)
-        if(single_test(m, n)) return false;
+        if(singleTest(m, n)) return false;
     return true;
 }
 
