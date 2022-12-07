@@ -5,7 +5,7 @@ using namespace std;
 int fast_modular_exponentiaion(int base, int exp, int mod)
 {
     int bit = ceil(log2(exp)), res = 1, power = base % mod;
-    for(long long i = 0; i <= bit; i++)
+    for(int i = 0; i <= bit; i++)
     {
         //bit exists
         if((int)pow(2, i) & exp) res = res * power % mod;
