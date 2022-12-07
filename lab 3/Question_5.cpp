@@ -29,7 +29,7 @@ int fastModularExponentiaion(int base, int exp, int mod)
 */
 bool singleTest(int m, int n)
 {
-    //creates random base a
+    //creates random base a where 2 <= a <= n - 1
     int a = 2 + rand() % (n - 4);
     //computes a ^ m % n with fast modular exponentiation
     int res = fastModularExponentiaion(a, m, n);
