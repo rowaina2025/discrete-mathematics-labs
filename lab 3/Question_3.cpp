@@ -9,11 +9,13 @@ using namespace std;
     t: *int
     recursive functions, on the last return, s and t point to bezout coefficients
 */
-void eGCD(int a, int b, int *s, int *t) {
+void eGCD(int a, int b, int *s, int *t)
+{
     //the s and t used in each step in the backward substitution
     int si, ti;
     //the base case
-    if(a % b == 0) {
+    if(a % b == 0)
+    {
         *s = 0;
         *t = 1;
         return;
@@ -25,7 +27,8 @@ void eGCD(int a, int b, int *s, int *t) {
     *t = si - a / b * ti;
 }
 
-int main() {
+int main()
+{
     //s, t are the bezouts coefficients
     int a, b, s, t;
     cout << "Enter a & b with space separated: ";
