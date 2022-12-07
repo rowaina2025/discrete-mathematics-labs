@@ -44,6 +44,6 @@ int main()
     cout << "Enter n & k with space separated: ";
     int n, k;
     cin >> n >> k;
-    if(!millerTest(n, k)) cout << "Probably prime";
-    else cout << "Not prime";
+    if(!millerTest(n, k)) cout << "Probably prime" << endl;
+    else cout << "Not prime" << endl;
 }
