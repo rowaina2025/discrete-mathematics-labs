@@ -10,9 +10,12 @@ using namespace std;
 void sieve(int n, bool primes[])
 {
     for(int i = 1; i <= n; i++) primes[i] = true;
-    for(int i = 2; i <= sqrt(n); i++) {
-        if(primes[i]) {
-            for(int j = i * i; j <= n; j += i) {
+    for(int i = 2; i <= sqrt(n); i++)
+        {
+        if(primes[i])
+        {
+            for(int j = i * i; j <= n; j += i)
+            {
                 primes[j] = false;
             }
         }
@@ -30,16 +33,19 @@ void trialDivisionFactorization(int n, bool primes[], vector<int>& factors)
 {
     //form all numbers less than or equals to n
     sieve(n, primes);
-    for(int i = 2; i <= n; i++) {
+    for(int i = 2; i <= n; i++)
+    {
         //tests if i is prime and is a factor of n
-        if(primes[i] && n % i == 0) {
+        if(primes[i] && n % i == 0)
+        {
             n /= i;
             factors.push_back(i--);
         }
     }
 }
 
-int main() {
+int main()
+{
     int n;
     cout << "Enter number: ";
     cin >> n;
