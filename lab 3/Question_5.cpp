@@ -2,13 +2,13 @@
 
 using namespace std;
 
-long long fast_modular_exponentiaion(long long base, long long exp, long long mod)
+int fast_modular_exponentiaion(int base, int exp, int mod)
 {
-    long long bit = ceil(log2(exp)), res = 1, power = base % mod;
+    int bit = ceil(log2(exp)), res = 1, power = base % mod;
     for(long long i = 0; i <= bit; i++)
     {
         //bit exists
-        if((long long)pow(2, i) & exp) res = res * power % mod;
+        if((int)pow(2, i) & exp) res = res * power % mod;
         power = power * power % mod;
     }
     return res;
