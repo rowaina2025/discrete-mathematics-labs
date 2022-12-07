@@ -10,9 +10,12 @@ using namespace std;
 void sieve(int n, bool primes[])
 {
     for(int i = 1; i <= n; i++) primes[i] = true;
-    for(int i = 2; i <= sqrt(n); i++) {
-        if(primes[i]) {
-            for(int j = i * i; j <= n; j += i) {
+    for(int i = 2; i <= sqrt(n); i++)
+        {
+        if(primes[i])
+        {
+            for(int j = i * i; j <= n; j += i)
+            {
                 primes[j] = false;
             }
         }
