@@ -51,8 +51,8 @@ bool singleTest(int m, int n)
     parameters:
     n: int
     k: int
-    test number n k of times, if passes all tests, returns true indicating probably prime 
-    and false if fails one test al least indicating composite
+    test number n k of times, if passes all tests, returns true indicating probably prime
+    and false if fails one at least one test indicating composite
 */
 bool millerTest(int n, int k)
 {
@@ -60,8 +60,13 @@ bool millerTest(int n, int k)
     else if(n == 2 || n == 3) return true;
     int m = n - 1;
     while(m % 2 == 0) m /= 2;
-    for(int i = 0; i < k; i++) if(single_test(m, n)) return false;
-    return true;
+    for(int i = 0; i < k; i++)
+    {
+        bool result = singleTest(m, n);
+        if(result && i == k - 1) return true;
+        else if(!result) return false;
+    }
+    return false;
 }
 
 int main()
@@ -69,6 +74,6 @@ int main()
     cout << "Enter n & k with space separated: ";
     int n, k;
     cin >> n >> k;
-    if(!millerTest(n, k)) cout << "Probably prime" << endl;
+    if(millerTest(n, k)) cout << "Probably prime" << endl;
     else cout << "Not prime" << endl;
 }
