@@ -25,7 +25,7 @@ int fastModularExponentiaion(int base, int exp, int mod)
     parametes:
     m: int
     n: int
-    returns true if n is probably prime and false if composite for single base created randonly
+    returns true if n is probably prime and false if composite for single base created randomly
 */
 bool singleTest(int m, int n)
 {
